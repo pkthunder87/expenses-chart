@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-[90%] sm:text-[100%];
+  }
+
+  body {
+    @apply flex h-[100dvh] w-[100dvw] items-center justify-center text-[1.6rem] antialiased sm:h-[991px] sm:w-[1440px]  sm:overflow-scroll;
+  }
+}
