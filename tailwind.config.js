@@ -14,12 +14,12 @@ export default {
     },
     extend: {
       colors: {
-        'very-light-grayish-blue': 'hsl(210, 60%, 98%)',
-        'light-grayish-blue-1': 'hsl(211, 68%, 94%)',
-        'light-grayish-blue-2': 'hsl(205, 33%, 90%)',
-        'grayish-blue': 'hsl(219, 14%, 63%)',
-        'dark-grayish-blue': 'hsl(219, 12%, 42%)',
-        'very-dark-blue': 'hsl(224, 21%, 14%)',
+        'soft-red': 'hsl(10, 79%, 65%)',
+        'cyan': 'hsl(186, 34%, 60%)',
+        'dark-brown': 'hsl(25, 47%, 15%)',
+        'medium-brown': 'hsl(28, 10%, 53%)',
+        'cream': 'hsl(27, 66%, 92%)',
+        'very-pale-orange': 'hsl(33, 100%, 98%)',
       },
     },
   },

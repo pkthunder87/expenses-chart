@@ -1,5 +1,11 @@
+import ExpensesLayout from './components/ExpensesLayout';
+
 function App() {
-  return <div className="bg-red-500 text-3xl">Expenses Chart</div>;
+  return (
+    <div className="">
+      <ExpensesLayout />
+    </div>
+  );
 }
 
 export default App;
