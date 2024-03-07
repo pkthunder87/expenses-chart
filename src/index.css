@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply flex h-[100dvh] w-[100dvw] items-center justify-center bg-cream text-[1.6rem] antialiased   sm:overflow-scroll;
+    @apply flex h-[100dvh] w-[100dvw] items-center justify-center bg-cream text-[1.6rem] antialiased sm:h-[1024px] sm:w-[1440px]   sm:overflow-scroll;
   }
 
   /* sm:h-[1024px] sm:w-[1440px] */

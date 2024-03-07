@@ -2,7 +2,7 @@ import ExpensesLayout from './components/ExpensesLayout';
 
 function App() {
   return (
-    <div className="">
+    <div className="w-[35dvw]">
       <ExpensesLayout />
     </div>
   );

@@ -3,11 +3,11 @@ import ExpensesTop from './ExpensesTop';
 
 function ExpensesLayout() {
   return (
-    <div className="flex flex-col gap-3">
-      <div className="flex h-16 w-80 items-center justify-center rounded-lg bg-soft-red text-white">
+    <div className="flex flex-col gap-6">
+      <div className="">
         <ExpensesTop />
       </div>
-      <div className="flex h-72 w-80 items-center justify-center rounded-lg bg-white">
+      <div className="flex h-[31.9rem] w-[33.8rem] items-center justify-center rounded-[20px] bg-white">
         <ExpensesBottom />
       </div>
     </div>
