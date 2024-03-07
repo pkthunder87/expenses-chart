@@ -1,8 +1,11 @@
+import ExpensesChart from './ExpensesChart';
+import ExpensesTotals from './ExpensesTotals';
+
 function ExpensesBottom() {
   return (
     <div>
-      <div>Expenses Chart</div>
-      <div>Expenses Totals</div>
+      <ExpensesChart />
+      <ExpensesTotals />
     </div>
   );
 }
