@@ -7,7 +7,7 @@ function ExpensesLayout() {
       <div className="">
         <ExpensesTop />
       </div>
-      <div className="flex h-[31.9rem] w-[33.8rem] items-center justify-center rounded-[20px] bg-white">
+      <div className="">
         <ExpensesBottom />
       </div>
     </div>
