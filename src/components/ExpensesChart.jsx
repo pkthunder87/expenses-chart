@@ -1,5 +1,6 @@
 import { BarChart, Bar, Tooltip, ResponsiveContainer, XAxis } from 'recharts';
 import dataJSON from './data.json';
+import { useState } from 'react';
 
 const day = new Date();
 const currentDay = day.getDay();
@@ -21,27 +22,21 @@ const newData = dataJSON.map((data) => {
   };
 });
 
-// export const CustomTooltip = ({ active, payload, label }) => {
-//   if (active && payload && payload.length) {
-//     return (
-//       <div className="custom-tooltip">
-//         <p className="label">{`${label} : ${payload[0].value}`}</p>
-//         <div>
-//           {payload.map((pld) => (
-//             <div style={{ display: 'inline-block', padding: 10 }}>
-//               <div style={{ color: pld.fill }}>{pld.value}</div>
-//               <div>{pld.dataKey}</div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     );
-//   }
+export const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip  flex h-10 w-[4.8rem] items-center justify-center rounded-[.4rem] bg-dark-brown">
+        <p className="label font-bold text-white">{`$${payload[0].value}`}</p>
+      </div>
+    );
+  }
 
-//   return null;
-// };
+  return null;
+};
 
 export default function ExpensesChart() {
+  let [barData, setBarData] = useState({});
+
   return (
     <div>
       <h2 className="text-[2rem] font-bold tracking-[.02em]">
@@ -64,13 +59,25 @@ export default function ExpensesChart() {
             tick={{ fill: 'hsl(28, 10%, 53%)' }}
             dy={5}
           />
-          <Tooltip />
+          <Tooltip
+            content={<CustomTooltip />}
+            cursor={false}
+            position={{
+              x: barData.x - 13,
+              y: barData.y - 47,
+            }}
+            allowEscapeViewBox={{ x: true, y: true }}
+          />
           <Bar
-            className="hover:cursor-pointer"
+            className="relative hover:cursor-pointer"
             dataKey="amount"
             radius={5}
             barSize={50}
             activeBar={{ filter: 'brightness(1.5)' }}
+            onMouseOver={(data) => {
+              setBarData(data);
+              console.log(data);
+            }}
           />
         </BarChart>
       </ResponsiveContainer>
