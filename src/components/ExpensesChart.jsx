@@ -21,6 +21,26 @@ const newData = dataJSON.map((data) => {
   };
 });
 
+// export const CustomTooltip = ({ active, payload, label }) => {
+//   if (active && payload && payload.length) {
+//     return (
+//       <div className="custom-tooltip">
+//         <p className="label">{`${label} : ${payload[0].value}`}</p>
+//         <div>
+//           {payload.map((pld) => (
+//             <div style={{ display: 'inline-block', padding: 10 }}>
+//               <div style={{ color: pld.fill }}>{pld.value}</div>
+//               <div>{pld.dataKey}</div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     );
+//   }
+
+//   return null;
+// };
+
 export default function ExpensesChart() {
   return (
     <div>
@@ -44,9 +64,14 @@ export default function ExpensesChart() {
             tick={{ fill: 'hsl(28, 10%, 53%)' }}
             dy={5}
           />
-
-          <Bar dataKey="amount" radius={5} barSize={50} />
           <Tooltip />
+          <Bar
+            className="hover:cursor-pointer"
+            dataKey="amount"
+            radius={5}
+            barSize={50}
+            activeBar={{ filter: 'brightness(1.5)' }}
+          />
         </BarChart>
       </ResponsiveContainer>
       <hr className="mt-7 border-[1px] border-cream"></hr>
