@@ -18,6 +18,9 @@ This is a solution to the [Expenses chart component challenge on Frontend Mentor
 - Semantic HTML5 markup
 - Flexbox
 - Grid
+- React
+- Vite
+- Recharts
 
 ## Author
 
