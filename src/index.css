@@ -4,11 +4,11 @@
 
 @layer base {
   html {
-    @apply text-[90%] sm:text-[100%];
+    @apply text-[80%] xl2:text-[100%];
   }
 
   body {
-    @apply flex h-[100dvh] w-[100dvw] items-center justify-center bg-cream text-[1.6rem] antialiased sm:h-[1024px] sm:w-[1440px]   sm:overflow-scroll;
+    @apply flex h-[100dvh] w-[100dvw] items-center justify-center bg-cream text-[1.6rem] antialiased  xl2:h-[1024px] xl2:w-[1440px];
   }
 
   /* sm:h-[1024px] sm:w-[1440px] */
