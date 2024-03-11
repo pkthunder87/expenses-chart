@@ -14,6 +14,31 @@ const dayOfWeek = {
   6: 'sat',
 };
 
+// Adjust bar height/width based on screen size
+const barHeight = window.innerWidth < 1440 ? '77%' : '68%';
+
+const barWidth =
+  window.innerWidth <= 375
+    ? 33
+    : window.innerWidth < 1440 && window.innerWidth > 375
+      ? 40
+      : 50;
+
+// Adjust tooltip position based on screen size
+const tooltipOffsetX =
+  window.innerWidth <= 375
+    ? 8
+    : window.innerWidth < 1440 && window.innerWidth > 375
+      ? 11
+      : 13;
+
+const tooltipOffsetY =
+  window.innerWidth <= 375
+    ? 33
+    : window.innerWidth < 1440 && window.innerWidth > 375
+      ? 40
+      : 47;
+
 // Highlights the current days bar in cyan and others in soft red
 const newData = dataJSON.map((data) => {
   return {
@@ -36,16 +61,17 @@ export const CustomTooltip = ({ active, payload }) => {
 
 export default function ExpensesChart() {
   let [barData, setBarData] = useState({});
+  console.log(window.innerWidth);
 
   return (
     <div>
-      <h2 className="text-[2rem] font-bold tracking-[.02em]">
+      <h2 className="mt-4 text-4xl font-bold tracking-[.02em] sm:mt-0 sm:text-[2rem]">
         Spending - Last 7 days
       </h2>
       <ResponsiveContainer
-        className="-ml-[.6rem] text-base "
+        className="-ml-[.6rem] -mt-2 text-base sm:mt-0"
         width={'104%'}
-        height={'68%'}
+        height={barHeight}
       >
         <BarChart
           data={newData}
@@ -63,8 +89,8 @@ export default function ExpensesChart() {
             content={<CustomTooltip />}
             cursor={false}
             position={{
-              x: barData.x - 13,
-              y: barData.y - 47,
+              x: barData.x - tooltipOffsetX,
+              y: barData.y - tooltipOffsetY,
             }}
             allowEscapeViewBox={{ x: true, y: true }}
           />
@@ -72,7 +98,7 @@ export default function ExpensesChart() {
             className="relative hover:cursor-pointer"
             dataKey="amount"
             radius={5}
-            barSize={50}
+            barSize={barWidth}
             activeBar={{ filter: 'brightness(1.5)' }}
             onMouseOver={(data) => {
               setBarData(data);
@@ -81,7 +107,7 @@ export default function ExpensesChart() {
           />
         </BarChart>
       </ResponsiveContainer>
-      <hr className="mt-7 border-[1px] border-cream"></hr>
+      <hr className="mt-7 border-[1px] border-cream sm:mt-4 xl2:mt-7"></hr>
     </div>
   );
 }
