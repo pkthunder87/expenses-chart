@@ -71,7 +71,7 @@ export default function ExpensesChart() {
       <ResponsiveContainer
         className="-ml-[.6rem] -mt-2 text-base sm:mt-0"
         width={'104%'}
-        height={'77%'}
+        height={barHeight}
       >
         <BarChart
           data={newData}
@@ -98,7 +98,7 @@ export default function ExpensesChart() {
             className="relative hover:cursor-pointer"
             dataKey="amount"
             radius={5}
-            barSize={'50%'}
+            barSize={barWidth}
             activeBar={{ filter: 'brightness(1.5)' }}
             onMouseOver={(data) => {
               setBarData(data);
