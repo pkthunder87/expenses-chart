@@ -11,7 +11,7 @@ This is a solution to the [Expenses chart component challenge on Frontend Mentor
 
 ### Links
 
-- Live Site URL: [Github Pages](ReplaceWithActualLiveUrl)
+- Live Site URL: [Github Pages](https://pkthunder-expenses.netlify.app/)
 
 ### Built with
 
