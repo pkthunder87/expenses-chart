@@ -61,7 +61,6 @@ export const CustomTooltip = ({ active, payload }) => {
 
 export default function ExpensesChart() {
   let [barData, setBarData] = useState({});
-  console.log(window.innerWidth);
 
   return (
     <div>
@@ -102,7 +101,6 @@ export default function ExpensesChart() {
             activeBar={{ filter: 'brightness(1.5)' }}
             onMouseOver={(data) => {
               setBarData(data);
-              console.log(data);
             }}
           />
         </BarChart>
