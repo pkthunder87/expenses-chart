@@ -2,6 +2,7 @@ import { BarChart, Bar, Tooltip, ResponsiveContainer, XAxis } from 'recharts';
 import dataJSON from './data.json';
 import { useState } from 'react';
 
+// Matches day of the week to name provided by dataJSON
 const day = new Date();
 const currentDay = day.getDay();
 const dayOfWeek = {
